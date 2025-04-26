@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+}
+
+#body {
+    margin: 10px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: black;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    color: black;
+    text-align: center;
+}
+    
+/*.header { position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: whitesmoke
+/*color:black;*/
+/*text-align: center;
+}*/
+
+/*
+ul.horizontal-list {
+    list-style-type: none;
+    left: 2px;
+    right: 2px;
+    margin:0;
+    padding: 0;
+    display: flex;
+    height: 50px;
+    background-color: whitesmoke;
+    color:black;
+    text-align: center;
+}
+*/
+
+.horizontal-list {
+    list-style-type: none;
+    background-color: whitesmoke;
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
+
+li.navbar {
+    margin: 0 10px;
+    color: black;
+}
+
+li {
+    color: whitesmoke;
+}
+
+li span {
+    color: black;
+}
+
+span {
+    background-color:whitesmoke;
+}
+
+/*@media screen and (prefers-color-scheme: dark) {
+    p { color: black; }
+}
+
+@media screen and (prefers-color-scheme: light) {
+    p { color: black; }
+}
+@media screen and (prefers-color-scheme: dark) {
+    h1 { color: black; }
+}
+
+@media screen and (prefers-color-scheme: light) {
+    h1 { color: black; }
+}
+@media screen and (prefers-color-scheme: dark) {
+    p { color: black; }
+}
+
+@media screen and (prefers-color-scheme: light) {
+    p { color: black; }
+}
+@media screen and (prefers-color-scheme: dark) {
+    h2 { color: black; }
+}
+
+@media screen and (prefers-color-scheme: light) {
+   h2 { color: black; }
+}
+@media screen and (prefers-color-scheme: dark) {
+    h3 { color: black; }
+}
+
+@media screen and (prefers-color-scheme: light) {
+    h3 { color: black; }
+}
+@media screen and (prefers-color-scheme: dark) {
+    h4 { color: black; }
+}
+
+@media screen and (prefers-color-scheme: light) {
+    h4 { color: black }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    li { color: black; }
+}
+
+@media screen and (prefers-color-scheme: light) {
+    li { color: black; }
+}
+    */
+    @media screen and (prefers-color-scheme: dark) {
+        p { color: black; }
+        span { 
+            color: black;
+            background-color: whitesmoke; 
+        }
+        body {background-color: black; }
+    }
+    
+    @media screen and (prefers-color-scheme: light) {
+        p { color: black; }
+        span { 
+            color: whitesmoke; 
+            background-color: black;
+            
+        }
+        .navbar
+        span {color: whitesmoke;
+            background-color: black;
+        
+        }
+        li 
+        span
+            {color: whitesmoke;
+            background-color: black;
+            
+            }
+            
+            span { 
+                color: whitesmoke; 
+                background-color: black;
+            }
+            
+        body { background-color: whitesmoke; }
+
+    }
+
+    .whitesmokeblacktext{
+        background-color: whitesmoke;
+        color:black;
+    }
+    .textdefaultmargin1cent{
+        background-color: black; color:whitesmoke; margin: 1%;
+    }
+    
+    .textdefaultmargin2cent{
+        background-color: whitesmoke; color:black; margin: 2%;
+    }
+
+    .textdefaultmargin3cent{
+        background-color: whitesmoke; color:black; margin: 3%;
+    }
+    /*style="background-color: whitesmoke; color:black;">*/
+    .dark-mode {
+        background-color: black;
+        color: white;
+      }
+      .light-mode {
+        background-color: whitesmoke;
+        color: black;
+    }
+    .dark_bg {
+        background-color: black;
+    }
+    .light_bg {
+        background-color: white;
+    }
+    .dark {
+        background-color: white;
+        color: black;
+    }
+    .light {
+        background-color: black;
+        color: white;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      
+      .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      
