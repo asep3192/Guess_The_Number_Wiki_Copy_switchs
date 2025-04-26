@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Switch! Generator</title>
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin: 5px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: black; /* OFF = black */
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px; width: 26px;
+      left: 4px; bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3; /* ON = bright blue */
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    #generateButton, #toggleAllButton {
+      padding: 12px 24px;
+      font-size: 18px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #numberDisplay {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="generateButton" onclick="generateSwitches()">Generate Switches</button>
+  <button id="toggleAllButton" onclick="toggleAllSwitches()">Turn All Switches On</button>
+  <div id="numberDisplay"></div>
+  <div id="switchContainer"></div>
+
+  <!-- Randomly generated number by user: -->
+
+  <script>
+    function generateSwitches() {
+      const container = document.getElementById("switchContainer");
+      container.innerHTML = ""; // Clear previous switches
+
+      const randomNum = Math.floor(Math.random() * 10000) + 1; // 1 to 10,0000
+      document.getElementById("numberDisplay").textContent = `Generated: ${randomNum}`;
+
+      for (let i = 0; i < randomNum; i++) {
+        const label = document.createElement("label");
+        label.className = "switch";
+
+        const input = document.createElement("input");
+        input.type = "checkbox";
+
+        const span = document.createElement("span");
+        span.className = "slider round";
+
+        label.appendChild(input);
+        label.appendChild(span);
+        container.appendChild(label);
+      }
+
+      // Append a comment log
+      const log = document.createComment(` Randomly generated number by user: ${randomNum} `);
+      document.body.appendChild(log);
+    }
+
+    function toggleAllSwitches() {
+      const checkboxes = document.querySelectorAll('.switch input[type="checkbox"]');
+      const allOn = Array.from(checkboxes).every(cb => cb.checked);
+
+      checkboxes.forEach(cb => cb.checked = !allOn);
+
+      const button = document.getElementById('toggleAllButton');
+      button.textContent = allOn ? 'Turn All Switches On' : 'Turn All Switches Off';
+    }
+  </script>
+
+</body>
+</html>
